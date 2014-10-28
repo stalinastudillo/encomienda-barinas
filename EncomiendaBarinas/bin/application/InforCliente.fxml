@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="508.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClienteController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label id="lRIF" fx:id="lCedulaRIF" layoutX="46.0" layoutY="70.0" text="RIF/Cedula" />
+    <Label fx:id="lNombre" layoutX="46.0" layoutY="101.0" text="Nombres" />
+    <Label id="lApellido" layoutX="46.0" layoutY="133.0" text="Apellidos" />
+    <Label fx:id="lDireccion" layoutX="46.0" layoutY="161.0" text="Dirección" />
+    <Label fx:id="lCorreo" layoutX="46.0" layoutY="273.0" text="Correo electrónico" />
+    <TextField fx:id="tfRIFCedula" layoutX="254.0" layoutY="70.0" prefWidth="132.99990000000253" />
+    <TextField fx:id="tfNombre" layoutX="167.0" layoutY="101.0" prefWidth="220.0" />
+    <TextField fx:id="tfApellido" layoutX="167.0" layoutY="131.0" prefWidth="220.0" />    
+    <TextArea fx:id="tfDireccion" layoutX="167.0" layoutY="161.0" prefHeight="77.0" prefWidth="220.0" wrapText="true" />
+    <TextField fx:id="tfCorreo" layoutX="167.0" layoutY="273.0" prefWidth="220.0" />
+    <Button id="lPrimero" fx:id="bPrimero" layoutX="40.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionBotonPrimero" prefWidth="81.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-fin.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bAnterior" layoutX="140.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionBotonAnterior" prefWidth="81.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-anterior.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bSiguiente" layoutX="240.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionBotonSiguiente" prefWidth="81.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-siguiente.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bUltimo" layoutX="340.0" layoutY="345.0" mnemonicParsing="false" onAction="#actionBotonUltimo" prefWidth="81.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-inicio.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bAceptar" disable="true" layoutX="384.0" layoutY="82.0" mnemonicParsing="false" onAction="#actionBotonAceptar" prefWidth="57.0" text="">
+   		<graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-ok.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button id="bEliminar" fx:id="bLimpiar" layoutX="384.0" layoutY="132.0" mnemonicParsing="false" onAction="#actionBotonLimpiar" prefWidth="57.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="434.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-delete.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bCancelar" layoutX="388.0" layoutY="182.0" minWidth="54.0" mnemonicParsing="false" onAction="#actionBotonCancelar" prefWidth="57.0" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-cancelar.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bNuevoCliente" layoutX="395" layoutY="280.0" minHeight="23.0" minWidth="39.0" mnemonicParsing="false" onAction="#actionBotonClienteNuevo" prefHeight="29.0" prefWidth="39.0" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-plus-sign.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label fx:id="lAlertaCI" layoutX="387.0" layoutY="70.0" styleClass="labelrojo" text="V-99999999" visible="false" />
+    <Label fx:id="lAlertaMsj" layoutX="130.0" layoutY="320.0" styleClass="labelrojo" text="Debes ingresar todos los datos" visible="false" />
+    <ChoiceBox fx:id="cbRIFCedula" layoutX="167.0" layoutY="69.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Natural" />
+          <String fx:value="Jurídico" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lCodigoReg" layoutX="57.0" layoutY="26.0" text="" visible="false" />
+    <Label fx:id="lAlertaRIFCedula" layoutX="110.0" layoutY="320.0" styleClass="labelrojo" text="RIF / Cédula registrado en el sistema" visible="false" />
+    <Button fx:id="bEliminar" layoutX="388.0" layoutY="232.0" mnemonicParsing="false" onAction="#actionBotonEliminar" text="">
+      <graphic>
+        <ImageView fitHeight="31.0" fitWidth="31.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-delete.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+	  <TextField fx:id="tfTelefono" layoutX="167.0" layoutY="243.0" prefWidth="220.0" />
+	  <Label fx:id="lTelefono1" layoutX="46.0" layoutY="243.0" text="Telefono" />
+	  
+	  <ChoiceBox fx:id="cbTarifa" layoutX="165.0" layoutY="303.0">
+	     <items>
+	        <FXCollections fx:factory="observableArrayList">
+	        </FXCollections>
+	     </items>
+	  </ChoiceBox>
+	  <Label id="lRIF" fx:id="lTarifa" layoutX="48.0" layoutY="303.0" text="Tarifa" />    
+	  </children>
+	  <stylesheets>
+	    <URL value="@estilo.css" />
+	  </stylesheets>
+</AnchorPane>

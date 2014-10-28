@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="300.0" minWidth="500.0" prefHeight="467.0" prefWidth="500.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.FormaPagoController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label layoutX="18.0" layoutY="28.0" text="Monto" />
+    <TextField fx:id="tfMonto" disable="true" layoutX="85.0" layoutY="23.0" prefWidth="73.0" />
+    <Label layoutX="21.0" layoutY="65.0" text="Banco" />
+    <ChoiceBox fx:id="cbBanco" disable="true" layoutX="83.0" layoutY="61.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Banco Mercantil" />
+          <String fx:value="Banco Bicentenario" />
+          <String fx:value="Banesco" />
+          <String fx:value="Banco Sofitasa" />
+          <String fx:value="Banco del Tesoro" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <ChoiceBox fx:id="cbTipoTarjetaC" disable="true" layoutX="83.0" layoutY="102.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <ChoiceBox fx:id="cbTipoTarjetaD" disable="true" layoutX="83.0" layoutY="102.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label layoutX="19.0" layoutY="109.0" text="Tipo Tarj." />
+    <Label layoutX="19.0" layoutY="149.0" text="Nro. Ref" />
+    <TextField id="tfNroref" fx:id="tfNroRef" disable="true" layoutX="83.0" layoutY="144.0" prefWidth="73.0" />
+    <RadioButton fx:id="rbEfectivo" layoutX="239.0" layoutY="23.0" mnemonicParsing="false" onAction="#actionBotonEfectivo" text="Efectivo" textFill="WHITE" />
+    <RadioButton fx:id="rbCheque" layoutX="239.0" layoutY="63.0" mnemonicParsing="false" onAction="#actionBotonCheque" text="Cheque" textFill="WHITE" />
+    <RadioButton fx:id="rbDebito" layoutX="239.0" layoutY="106.0" mnemonicParsing="false" onAction="#actionBotonTDebito" text="T. Débito" textFill="WHITE" />
+    <RadioButton fx:id="rbCredito" layoutX="239.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionBotonTCredito" text="T. Crédito" textFill="WHITE" />
+    <Button fx:id="bMas" disable="true" layoutX="372.0" layoutY="17.0" mnemonicParsing="false" onAction="#actionBotonMas" text="mas" />
+    <Button fx:id="bMenos" disable="true" layoutX="372.0" layoutY="54.0" mnemonicParsing="false" onAction="#actionBotonMenos" text="menos" />
+    <Button fx:id="bGuardar" disable="true" layoutX="372.0" layoutY="95.0" mnemonicParsing="false" onAction="#actionBotonGuardar" text="guardar" />
+    <Button fx:id="bCancelar" disable="true" layoutX="372.0" layoutY="145.0" mnemonicParsing="false" onAction="#actionBotonCancelar" text="cancelar" />
+    <TableView fx:id="tvTabla" layoutX="56.0" layoutY="193.0" prefHeight="200.0" prefWidth="153.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Codigo" fx:id="tcTipoPago" />
+        <TableColumn prefWidth="75.0" text="Monto" fx:id="tcMonto" />
+        <TableColumn prefWidth="75.0" text="Signo" fx:id="tcSigno" />
+      </columns>
+      <stylesheets>
+        <URL value="@estilo.css" />
+      </stylesheets>
+    </TableView>
+    <Label fx:id="lAPagar" layoutX="271.0" layoutY="209.0" text="A pagar:" />
+    <Label fx:id="lPagado" layoutX="269.0" layoutY="249.0" text="Pagado:" />
+    <Label fx:id="lResta" layoutX="269.0" layoutY="285.0" text="Resta:" />
+    <Label id="lMontoaPagar" fx:id="lMontoAPagar" layoutX="356.0" layoutY="210.0" styleClass="labelazul" text="" />
+    <Label fx:id="lMontoPagado" layoutX="354.0" layoutY="250.0" styleClass="labelverde" text="" />
+    <Label fx:id="lMontoResta" layoutX="352.0" layoutY="284.0" styleClass="labelrojo" text="" />
+    <Label fx:id="lAlerta" layoutX="125.0" layoutY="420.0" text="" visible="false" />
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>

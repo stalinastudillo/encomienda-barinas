@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="350.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.ValorDeclaradoController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label layoutX="32.0" layoutY="50.0" text="Nombre" />
+    <Label layoutX="32.0" layoutY="90.0" text="RIF" />
+    <Label layoutX="32.0" layoutY="130.0" text="Nro. Factura" />
+    <Label layoutX="32.0" layoutY="170.0" text="Nro. Control" />
+    <Label layoutX="32.0" layoutY="210.0" text="Monto" />
+    <TextField fx:id="tfNombre" layoutX="125.0" layoutY="50.0" prefWidth="175.0" text="" />
+    <TextField fx:id="tfRIF" layoutX="125.0" layoutY="90.0" prefWidth="125.0" />
+    <TextField fx:id="tfNroFactura" layoutX="125.0" layoutY="130.0" prefWidth="125.0" />
+    <TextField fx:id="tfNroControl" layoutX="125.0" layoutY="170.0" prefWidth="125.0" />
+    <TextField fx:id="tfMonto" layoutX="125.0" layoutY="210.0" prefWidth="125.0" />
+    <Button fx:id="bAceptar" layoutX="248.0" layoutY="292.0" mnemonicParsing="false" onAction="#botonActionAceptar" text="" disable="true">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-ok.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bCancelar" layoutX="39.0" layoutY="292.0" mnemonicParsing="false" onAction="#botonActionCancelar" text="" >
+     <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-cancelar.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>

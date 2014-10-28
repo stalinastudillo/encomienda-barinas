@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="516.0" prefWidth="641.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.InicioController">
+  <!-- TODO Add Nodes -->
+  <children>
+  	<MenuBar fx:id="mbMenu" layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="643.0" styleClass="modBar">
+      <menus>
+        <Menu mnemonicParsing="false" text="Encomienda" fx:id="mbEncomienda">
+         	<items>            
+           		<MenuItem mnemonicParsing="false" text="Facturar" onAction="#menuEncomienda" fx:id="miEncomienda" />
+          	</items>         
+        </Menu>
+        <Menu mnemonicParsing="false" text="Cliente" fx:id="mbCliente" >         
+          	<items>            
+            	<MenuItem mnemonicParsing="false" text="Consultar" onAction="#menuCliente" fx:id="miCliente" />
+          	</items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Configuración" fx:id="mbConfiguracion">
+         	<items> 
+         		<MenuItem mnemonicParsing="false" text="Unidad" onAction="#menuUnidad" fx:id="miUnidad"/>      
+         	    <MenuItem mnemonicParsing="false" text="Tarifa" onAction="#menuTarifa" fx:id="miTarifa"/>
+           		<MenuItem mnemonicParsing="false" text="Peso" onAction="#menuPeso" fx:id="miPeso"/>
+           		<MenuItem mnemonicParsing="false" text="Variable" onAction="#menuVariable" fx:id="miVariable"/>          	    
+         	    <MenuItem mnemonicParsing="false" text="Ciudad Destino" onAction="#menuCiudadDestino" fx:id="miCiudadDestino"/>
+         	    <MenuItem mnemonicParsing="false" text="Tipo Embalaje" onAction="#menuTipoEmbalaje" fx:id="miTipoEmbalaje"/>         	     	            	            	            	
+            	<MenuItem mnemonicParsing="false" text="Asociar Tarifa/Peso" onAction="#menuTarifaPeso" fx:id="miTarifaPeso"/>
+            	<MenuItem mnemonicParsing="false" text="Detalle Variable" onAction="#menuDetalleVariable" fx:id="miComision" />
+            	<MenuItem mnemonicParsing="false" text="Ipostel" onAction="#menuIpostel" fx:id="miIpostel"/>            	
+         	</items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Reportes" fx:id="mbReportes">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Reporte 1" onAction="#menuReporte1"/>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Salir" fx:id="mbSalir" onAction="#menuSalir">
+        	<items>
+            	<MenuItem mnemonicParsing="false" text="Salir" fx:id="miSalir"/>
+            </items>          
+        </Menu>
+      </menus>
+    </MenuBar>
+	<Label fx:id="lAlertaMsj" layoutX="140.0" layoutY="100.0" styleClass="labelrojo" text="" visible="false" />    
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>
