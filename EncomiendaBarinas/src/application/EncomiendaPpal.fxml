@@ -14,7 +14,7 @@
   <children>
    <Label fx:id="lFecha" layoutX="460.0" layoutY="10.0" text="Fecha" visible="false" />   
    <Label fx:id="lValorFecha" layoutX="500.0" layoutY="10.0" text="" visible="false" />
-   <Label fx:id="lBuscador" layoutX="460.0" layoutY="30.0" text="Buscador" visible="true" />     
+   <Label fx:id="lBuscador" layoutX="460.0" layoutY="30.0" text="Buscador" visible="true" prefWidth="70"/>     
    <TextField fx:id="tfBuscador" layoutX="530" layoutY="30.0" visible="true" prefWidth="60"/>   
    
   	<Label fx:id="lBandModoPago" layoutX="1.0" layoutY="1.0" text="" visible="false" />
@@ -177,7 +177,7 @@
       </graphic>
     </Button>
     <Label fx:id="lFacturaCodigo" layoutX="207.0" layoutY="6.0" text="" visible="false" />
-    <Button fx:id="bEliminarFactura" layoutX="500.0" layoutY="470.0" minHeight="29.0" minWidth="39.0" mnemonicParsing="false" onAction="#actionBotonFacturaEliminar" prefHeight="29.0" prefWidth="39.0" text="">
+    <Button fx:id="bEliminarFactura" layoutX="20.0" layoutY="10.0" minHeight="29.0" minWidth="39.0" mnemonicParsing="false" onAction="#actionBotonFacturaEliminar" prefHeight="29.0" prefWidth="39.0" text="">
       <graphic>
         <ImageView fitHeight="29.25" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
           <image>
