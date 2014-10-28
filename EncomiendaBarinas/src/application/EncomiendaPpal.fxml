@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="300.0" minWidth="500.0" onMouseEntered="#actionMouseEnter" prefHeight="516.0" prefWidth="641.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EncomiendaController">
+  <!-- TODO Add Nodes -->
+  <children>
+   <Label fx:id="lFecha" layoutX="460.0" layoutY="10.0" text="Fecha" visible="false" />   
+   <Label fx:id="lValorFecha" layoutX="500.0" layoutY="10.0" text="" visible="false" />
+   <Label fx:id="lBuscador" layoutX="460.0" layoutY="30.0" text="Buscador" visible="true" />     
+   <TextField fx:id="tfBuscador" layoutX="530" layoutY="30.0" visible="true" prefWidth="60"/>   
+   
+  	<Label fx:id="lBandModoPago" layoutX="1.0" layoutY="1.0" text="" visible="false" />
+    <Button fx:id="botonRemitente" disable="true" layoutX="114.0" layoutY="70.0" mnemonicParsing="false" onAction="#actionBotonRemitente" opacity="0.51" text="Remitente" textOverrun="ELLIPSIS" />
+    <Button fx:id="botonDestinatario" disable="true" layoutX="400.0" layoutY="70.0" mnemonicParsing="false" onAction="#actionBotonDestinatario" opacity="0.51" text="Destinatario" textOverrun="ELLIPSIS" />
+    <Label fx:id="lEnvioa" layoutX="44.0" layoutY="180.0" text="Envio a" />
+    <ChoiceBox fx:id="cbEnvio" disable="true" layoutX="166.0" layoutY="180.0" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Oficina" />
+          <String fx:value="Dirección fiscal" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lModoPago" layoutX="260.0" layoutY="20.0" text="Modo Pago" />
+    <Label fx:id="lTipoEmbalaje" layoutX="45.0" layoutY="210.0" prefWidth="111.0" text="Tipo Embalaje" />
+    <ChoiceBox fx:id="cbTipoEmbalaje" disable="true" layoutX="165.0" layoutY="210.0" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="" />
+          <String fx:value="" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label id="" fx:id="lCiudadDestino" layoutX="44.0" layoutY="240.0" prefWidth="99.0" text="Ciudad Destino" />
+    <ChoiceBox id="" fx:id="cbCiudadDestino" disable="true" layoutX="164.0" layoutY="240.0" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="" />
+          <String fx:value="" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lValorDeclarado" layoutX="47.0" layoutY="270.0" prefWidth="99.0" text="Valor Declarado" />
+    <Label fx:id="lNroPieza" layoutX="49.0" layoutY="300.0" prefWidth="69.0" text="Nro Pieza" />
+    <ChoiceBox fx:id="cbNroPieza" disable="true" layoutX="164.0" layoutY="300.0" prefWidth="38.999900000002526" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="1" />
+          <String fx:value="2" />
+          <String fx:value="3" />
+          <String fx:value="4" />
+          <String fx:value="5" />
+          <String fx:value="6" />
+          <String fx:value="7" />
+          <String fx:value="8" />
+          <String fx:value="9" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lPeso" layoutX="329.0" layoutY="180.0" text="Peso" />
+    <TextField fx:id="tfPeso" disable="true" layoutX="459.0" layoutY="180.0" opacity="0.5" prefWidth="60.0" />
+    <Label fx:id="lMonto" layoutX="329.0" layoutY="210.0" text="Monto" />
+    <Label fx:id="lResulMonto" visible="true" layoutX="459.0" layoutY="210.0" text="0"/>
+    <Label fx:id="lRecargo" layoutX="328.0" layoutY="240.0" text="Recargo" />
+    <TextField fx:id="tfRecargo" disable="true" layoutX="459.0" layoutY="240.0" opacity="0.5" prefWidth="50.0" />
+    <Label fx:id="lPorcRecargo" layoutX="510.0" layoutY="240.0" text="\%" />
+    <Label fx:id="lSeguro" layoutX="327.0" layoutY="270.0" text="Seguro" />
+    <TextField fx:id="tfSeguro" disable="true" layoutX="459.0" layoutY="270.0" opacity="0.5" prefWidth="50.0" />
+    <Label fx:id="lPorcSeguro" layoutX="510.0" layoutY="270.0" text="\%" />
+    
+    <Label id="" fx:id="lContrareembolso" layoutX="328.0" layoutY="300.0" text="Contrareembolso" />
+    <Label id="" fx:id="lValorContrareembolso" disable="true" prefWidth="80.0" layoutX="459.0" layoutY="300.0" opacity="0.5" />
+       
+    <Label id="" fx:id="lDescripDeclarado" layoutX="329.0" layoutY="330.0" text="Descrip / Declarado" />
+    <TextField id="" fx:id="tfDescripDeclarado" disable="true" layoutX="459.0" layoutY="330.0" opacity="0.5" prefWidth="99.0" />
+    <Label fx:id="lResulRecargo" layoutX="160.0" layoutY="360.0" text="Recargo" />
+    <Label fx:id="lTotalRecargo" layoutX="280.0" layoutY="360.0" prefWidth="60.0" text="0" />
+    <Label fx:id="lResulContrareembolso" layoutX="160.0" layoutY="380.0" text="Contrareembolso" />
+    <Label fx:id="lTotalContrareembolso" layoutX="280.0" layoutY="380.0" prefWidth="80.0" text="0" />
+    
+    <Label id="" fx:id="lResulValorDeclar" visible="false" layoutX="160.0" layoutY="398.0" text="Valor Declarado" />
+    <Label fx:id="lTotalValorDeclar" visible="false" layoutX="280.0" layoutY="398.0" prefWidth="80.0" text="" />
+    <Label fx:id="lResulipostel" layoutX="340.0" layoutY="360.0" text="Ipostel" />
+    <Label fx:id="lTotalipostel" layoutX="410.0" layoutY="360.0" prefWidth="60.0" text="0" />
+    <Label fx:id="lResulSeguro" layoutX="340.0" layoutY="380.0" text="Seguro" />
+    <Label fx:id="lTotalSeguro" layoutX="410.0" layoutY="380.0" prefWidth="60.0" text="0" />
+    <Label fx:id="lResulIVA" layoutX="270.0" layoutY="415.0" text="Subtotal" />
+    <Label fx:id="lSubTotal" layoutX="340.0" layoutY="415.0" prefWidth="69.0" text="0" />
+    <Label layoutX="270.0" layoutY="435.0" text="IVA" />
+    <Label fx:id="lTotalIVA" layoutX="340.0" layoutY="435.0" prefWidth="69" text="0" />
+    <Button fx:id="bCalcularMonto" disable="true" layoutX="570.0" layoutY="310.0" mnemonicParsing="false" onAction="#actionCalcularMonto" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-ok.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label fx:id="lResulTotal" layoutX="270.0" layoutY="455.0" text="Total" />
+    <Label fx:id="lTotalTotal" layoutX="340.0" layoutY="455.0" prefWidth="69" text="0" />
+    <Label fx:id="lNombreRemitente" layoutX="100.0" layoutY="95.0" text="" visible="false" />
+    <Button fx:id="bCancelar" disable="false" layoutX="20.0" layoutY="470.0" minHeight="29.0" minWidth="68.0" mnemonicParsing="false" onAction="#actionCancelar" prefHeight="29.0" prefWidth="68.0" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-cancelar.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label fx:id="lNombreDestinatario" layoutX="395.0" layoutY="95.0" text="" />
+    <Label fx:id="lTituloFactura1" layoutX="150.0" layoutY="138.0" text="Factura a nombre de: " />
+    <Label fx:id="lTituloFactura2" layoutX="290.0" layoutY="138.0" text="" />
+    <ChoiceBox fx:id="cbUnidadPeso" disable="true" layoutX="522.0" layoutY="179.0" opacity="0.5" prefWidth="55.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="kgs" />
+          <String fx:value="gs" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <RadioButton fx:id="rbCancelado" layoutX="220.0" layoutY="45.0" mnemonicParsing="false" onAction="#actionRbCancelado" styleClass="colorletra" text="Cancelado" />
+    <RadioButton fx:id="rbFletedestino" layoutX="320.0" layoutY="45.0" mnemonicParsing="false" onAction="#actionRbFleteDestino" styleClass="colorletra" text="Flete Destino" />
+    <Button fx:id="bPrimero" layoutX="150.0" layoutY="470.0" mnemonicParsing="false" onAction="#actionBotonPrimero" text="" visible="true">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-fin.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bAnterior" layoutX="200.0" layoutY="473.0" mnemonicParsing="false" onAction="#actionBotonAnterior" text="" visible="true">
+      <graphic>
+        <ImageView fitHeight="29.0" fitWidth="38.666666666666664" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-anterior.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bSiguiente" layoutX="360.0" layoutY="473.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#botonActionSiguiente" prefHeight="32.0" prefWidth="32.0" text="" visible="true">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-siguiente.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bUltimo" layoutX="400.0" layoutY="470.0" mnemonicParsing="false" onAction="#botonActionUltimo" text="" visible="true">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="42.666666666666664" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-inicio.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bPago" disable="true" layoutX="480.0" layoutY="400.0" mnemonicParsing="false" onAction="#botonActionPagoGuardarFact" text="Pago" />
+    <Button fx:id="bNuevaFactura" layoutX="560.0" layoutY="470.0" minHeight="23.0" minWidth="39.0" mnemonicParsing="false" onAction="#actionBotonFacturaNueva" prefHeight="29.0" prefWidth="39.0" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-plus-sign.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label fx:id="lFacturaCodigo" layoutX="207.0" layoutY="6.0" text="" visible="false" />
+    <Button fx:id="bEliminarFactura" layoutX="500.0" layoutY="470.0" minHeight="29.0" minWidth="39.0" mnemonicParsing="false" onAction="#actionBotonFacturaEliminar" prefHeight="29.0" prefWidth="39.0" text="">
+      <graphic>
+        <ImageView fitHeight="29.25" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-delete.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label fx:id="lAlertaMsj" layoutX="266.0" layoutY="395.0" styleClass="labelrojo" text="" visible="false" />
+    <RadioButton fx:id="rbValorDeclarado" disable="true" layoutX="166.0" layoutY="272.0" mnemonicParsing="false" onAction="#actionRbValorDeclarado" text="" />
+    <Button fx:id="bValorDeclarado" layoutX="190.0" layoutY="269.0" mnemonicParsing="false" onAction="#actionValorDeclarado" prefWidth="139.0" text="0" textOverrun="ELLIPSIS" visible="false" />    
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>

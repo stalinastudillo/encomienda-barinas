@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="320.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <!-- TODO Add Nodes -->
+  <children>
+  	<Label fx:id="lAlerta" layoutX="15.0" layoutY="15.0" styleClass="labelrojo" text="Informaci�n para esta variable ya existe" visible="false" />
+    <Label fx:id="lTipoVariable" layoutX="44.0" layoutY="50.0" text="Tipo Variable" />
+    <ChoiceBox fx:id="cbTipoVariable" layoutX="150.0" layoutY="50.0" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="" />
+          <String fx:value="" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lTipoValor" layoutX="44.0" layoutY="90.0" text="Tipo" />
+    <ChoiceBox fx:id="cbTipoValor" layoutX="150.0" layoutY="90.0" styleClass="colorletra">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Monto" />
+          <String fx:value="Porcentaje" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label fx:id="lValorVariable" layoutX="44.0" layoutY="170.0" text="Valor Variable" />
+    <TextField fx:id="tfValorVariable" disable="true" layoutX="150.0" layoutY="170.0" opacity="0.5" prefWidth="73.0" />
+    <Label fx:id="lFechaVigencia" layoutX="44.0" layoutY="130.0" text="Fecha Vigencia" />    
+   
+    <Button fx:id="bAceptar" disable="true" layoutX="190.0" layoutY="220.0" mnemonicParsing="false" onAction="#botonActionAceptar" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-ok.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bCancelar" layoutX="60.0" layoutY="220.0" mnemonicParsing="false" onAction="#botonActionCancelar" text="">
+     <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-cancelar.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+      <GridPane fx:id="gpFecha" layoutX="150.0" layoutY="128.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+     
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>

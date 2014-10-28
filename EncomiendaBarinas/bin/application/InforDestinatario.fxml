@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" disable="false" minHeight="300.0" minWidth="400.0" prefHeight="331.0" prefWidth="508.0000999999975" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.DestinatarioController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button fx:id="bCancelar" layoutX="257.0" layoutY="280.0" minHeight="23.0" minWidth="75.0" mnemonicParsing="false" onAction="#actionBotonCancelar" prefHeight="23.0" prefWidth="75.0" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-cancelar.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bProcesar" layoutX="134.0" layoutY="275.0" minHeight="34.0" minWidth="57.0" mnemonicParsing="false" onAction="#actionBotonProcesar" prefHeight="34.0" prefWidth="57.0" text="">
+      <graphic>
+        <ImageView fitHeight="32.0" fitWidth="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-ok.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label id="lRIFCI" fx:id="lRIFCIC" layoutX="53.0" layoutY="45.0" text="RIF/Cédula" />
+    <Label id="lNombre" fx:id="lNombreC" layoutX="53.0" layoutY="75.0" text="Nombres" />
+    <Label id="lApellido" layoutX="53.0" layoutY="105.0" text="Apellidos" />
+    <Label id="lTelefono" fx:id="lTelefonoC" layoutX="53.0" layoutY="135.0" text="Teléfono" />
+    <Label id="lDireccion" fx:id="lDireccionC" layoutX="53.0" layoutY="166.0" text="Dirección" />
+    <Label id="lCorreo" fx:id="lCorreo" layoutX="53.0" layoutY="213.0" text="Correo" />
+    <Label id="lTarifa" fx:id="lTarifa" layoutX="53.0" layoutY="244.0" text="Tarifa" />
+    <TextField fx:id="tfRIFCedulaC" disable="true" layoutX="232.0" layoutY="45.0" prefWidth="102.0" />
+    <TextField fx:id="tfNombreC" layoutX="134.0" layoutY="75.0" prefWidth="200.0" />
+    <TextField fx:id="tfApellidoC" layoutX="134.0" layoutY="105.0" prefWidth="200.0" />
+    <TextField fx:id="tfTelefonoC" layoutX="133.0" layoutY="135.0" prefWidth="200.0" />
+    <TextArea fx:id="tfDireccionC" layoutX="133.0" layoutY="166.0" prefHeight="40.0" prefWidth="200.0" wrapText="true" />   
+    <TextField fx:id="tfCorreoC" layoutX="133.0" layoutY="213.0" prefWidth="200.0" />
+    <ChoiceBox fx:id="cbTarifa" layoutX="133.0" layoutY="244.0">
+	     <items>
+	        <FXCollections fx:factory="observableArrayList">
+	        </FXCollections>
+	     </items>
+	  </ChoiceBox>
+    <Button fx:id="bLimpiarRD" disable="true" layoutX="345.0" layoutY="105.0" minWidth="42.0" mnemonicParsing="false" onAction="#actionLimpiarRD" opacity="0.5" prefHeight="40.0" prefWidth="42.0" text="">
+      <graphic>
+        <ImageView fitHeight="34.0" fitWidth="34.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icon-delete.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>   
+    <Label fx:id="linforRD" layoutX="160.0" layoutY="20.0" prefWidth="180.0" text="Información Destinatario" />
+    <ChoiceBox fx:id="cbRIFCedulaC" layoutX="133.0" layoutY="45" prefWidth="91.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Natural" />
+          <String fx:value="Jurídico" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label id="lEjemploRifCI" fx:id="lEjemploCIP" layoutX="343.0" layoutY="46.0" styleClass="labelrojo" text="V-99999999" visible="false" />
+     <Label fx:id="lAlerta" layoutX="145.0" layoutY="290.0" styleClass="labelrojo" text="Debe ingresar los datos de destinatario" visible="false" />
+    <Label fx:id="lEjemploCIR" layoutX="343.0" layoutY="45.0" styleClass="labelrojo" text="V-99999999" visible="false" />    
+  </children>
+  <stylesheets>
+    <URL value="@estilo.css" />
+  </stylesheets>
+</AnchorPane>
