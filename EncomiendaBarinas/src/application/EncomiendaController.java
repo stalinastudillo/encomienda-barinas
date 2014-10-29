@@ -208,7 +208,7 @@ public class EncomiendaController{
 	Query queryResultTipoEmbalaje;	
 	Query queryResultCiudadDestino;	
 	Query queryResultCliente;
-	Query queryResultFactura;
+	Query queryResultFactura, queryResultFactura2;
 	Query queryResultOficina;
 	Query queryResultUnidadPeso;
 	Query queryResultPesoTarifa;
@@ -243,7 +243,7 @@ public class EncomiendaController{
 			
 	Factura objFP = new Factura(); 
 	
-	private PruebaVentanas ProgramaPrincipal;
+	private PruebaVentanas ProgramaPrincipal = new PruebaVentanas();
 	
 	@FXML
 	private void initialize(){	
@@ -455,12 +455,22 @@ public class EncomiendaController{
 				
 				if (ContextoEncomienda.getInstance().getBanderaNuevaFactura() == false){
 					queryResultFactura = sesion1.createQuery("from Factura order by Codigo desc");	
-					queryResultFactura.setMaxResults(1);				
-					objFactura = (Factura) queryResultFactura.uniqueResult();
-					bSiguiente.setDisable(true);
-					bUltimo.setDisable(true);
-					printFactura(objFactura);
-				}				
+					System.out.println(" / / / / / / / / / / / / / / / / / / "+queryResultFactura.list().size());				
+					
+					if (queryResultFactura.list().size()>0){
+						queryResultFactura.setMaxResults(1);					
+						objFactura = (Factura) queryResultFactura.uniqueResult();
+						bSiguiente.setDisable(true);
+						bUltimo.setDisable(true);
+						printFactura(objFactura);
+					}else{
+						lAlertaMsj.setText("NO EXISTEN FACTURAS REGISTRADAS");
+						lAlertaMsj.setVisible(true);
+						bAnterior.setDisable(true);bSiguiente.setDisable(true);
+						bPrimero.setDisable(true);bUltimo.setDisable(true);
+						botonRemitente.setDisable(true); botonDestinatario.setDisable(true);
+					}
+				}	
 				
 				closeSesion(sesion1);
 			}catch(SQLGrammarException sq){
