@@ -1,0 +1,1 @@
+Aplicación encargada de gestionar un sistema de encomiendas, donde se llevan procesos tales como facturación, registro de clientes (tanto de la persona física que lleva la encomienda como el titular de la factura) y reportes de información.
